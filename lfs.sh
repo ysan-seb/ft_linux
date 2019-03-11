@@ -75,7 +75,7 @@ useradd -s /bin/bash -g lfs -m -k /dev/null lfs
 chown -v lfs $LFS/tools
 chown -v lfs $LFS/sources
 
-cat > /home/lfs << "END_OF_SCRIPT"
+cat > /home/lfs/lfs.sh << "END_OF_SCRIPT"
 #!/bin/bash
 
 # Setting Up the Environment
@@ -96,7 +96,7 @@ source ~/.bash_profile
 
 # About SBUs
 
-export MAKEFLAGS="-j 2"
+export MAKEFLAGS="-j 6"
 
 # Installation of Cross Binutils
 
@@ -242,7 +242,7 @@ fi
 rm -v dummy.c a.out
 cd $LFS/sources
 rm -rf glibc-2.29/
-export MAKEFLAGS="-j 2"
+export MAKEFLAGS="-j 6"
 
 # Libstdc++ from GCC-8.2.0
 
